@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 import Avatar from './svg/avatar';
+import './tribe.scss';
 
 class Tribe extends Component{
     render(){
         return(
-            <div>
+            <div className="container">
                 <button>
                     <Avatar />
-                    hi
                 </button>
             </div>
         );
