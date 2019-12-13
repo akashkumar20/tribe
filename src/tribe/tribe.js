@@ -41,7 +41,7 @@ class Tribe extends Component {
 
         const noseWidth = nose.getBoundingClientRect().width;
         const noseHeight = nose.getBoundingClientRect().height;
-        const xNoseMovement = (noseWidth - faceWidth)/2;
+        const xNoseMovement = (noseWidth - faceWidth)/3;
         const yNoseMovement = (noseHeight - faceHeight)/3;
         const nosePosX = (mousePercentX * 2 - 1) * xNoseMovement;
         const nosePosY = (mousePercentY * 2 - 1) * yNoseMovement;
@@ -55,7 +55,7 @@ class Tribe extends Component {
 
         const frontHairWidth = frontHair.getBoundingClientRect().width;
         const frontHairHeight = frontHair.getBoundingClientRect().height;
-        const xFrontHairMovement = (frontHairWidth - faceWidth) *3 ;
+        const xFrontHairMovement = (frontHairWidth - faceWidth) * 3 ;
         const yFrontHairMovement = (frontHairHeight - faceHeight)/6;
         const frontHairPosX = (mousePercentX * 2 - 1) * xFrontHairMovement;
         const frontHairPosY = (mousePercentY * 2 - 1) * yFrontHairMovement;
