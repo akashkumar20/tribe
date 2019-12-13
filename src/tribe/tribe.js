@@ -7,22 +7,24 @@ class Tribe extends Component {
     constructor(props){
         super(props);
         this.state={
-            nx: '',
-            ny: '',
-            lmx: '',
-            lmy: '',
-            rmx: '',
-            rmy: '',
-            fhx: '',
-            fhy: '',
-            hx: '',
-            hy: '',
-            lex: '',
-            ley: '',
-            rex: '',
-            rey: '',
-            fhex: '',
-            fhey: '',
+            value: {
+                nx: '',
+                ny: '',
+                lmx: '',
+                lmy: '',
+                rmx: '',
+                rmy: '',
+                fhx: '',
+                fhy: '',
+                hx: '',
+                hy: '',
+                lex: '',
+                ley: '',
+                rex: '',
+                rey: '',
+                fhex: '',
+                fhey: '',
+            }
         }
     }
     updateTribeFace(e, type){
@@ -111,48 +113,38 @@ class Tribe extends Component {
 
         this.setState((pre) => ({
             ...pre,
-            nx: nosePosX,
-            ny: nosePosY,
-            lmx: leftMarkPosX,
-            lmy: leftMarkPosY,
-            rmx: rightMarkPosX,
-            rmy: rightMarkPosY,
-            fhx: frontHairPosX,
-            fhy: frontHairPosY,
-            hx: hairPosX,
-            hy: hairPosY,
-            lex: leftEarPosX,
-            ley: leftEarPosY,
-            rex: rightEarPosX,
-            rey: rightEarPosY,
-            fhex: foreHeadPosX,
-            fhey: foreHeadPosY,
+            value: {
+                ...pre.value,
+                nx: nosePosX,
+                ny: nosePosY,
+                lmx: leftMarkPosX,
+                lmy: leftMarkPosY,
+                rmx: rightMarkPosX,
+                rmy: rightMarkPosY,
+                fhx: frontHairPosX,
+                fhy: frontHairPosY,
+                hx: hairPosX,
+                hy: hairPosY,
+                lex: leftEarPosX,
+                ley: leftEarPosY,
+                rex: rightEarPosX,
+                rey: rightEarPosY,
+                fhex: foreHeadPosX,
+                fhey: foreHeadPosY,
+            }
         }))
     }
 
     render(){
-        const { nx, ny, lmx, lmy, rmx, rmy, fhx, fhy, hx, hy, lex, ley, rex, rey, fhex, fhey } = this.state;
+        const { value } = this.state;
         return(
-            <div className="container" onMouseMove={(e) => this.updateTribeFace(e, 'mouse')} onTouchMove={(e) => this.updateTribeFace(e, 'touch')}>
+            <div
+                className="container"
+                onMouseMove={(e) => this.updateTribeFace(e, 'mouse')}
+                onTouchMove={(e) => this.updateTribeFace(e, 'touch')}
+            >
                 <button>
-                    <Avatar 
-                        nx={nx}
-                        ny={ny}
-                        lmx={lmx}
-                        lmy={lmy}
-                        rmx={rmx}
-                        rmy={rmy}
-                        fhx={fhx}
-                        fhy={fhy}
-                        hx={hx}
-                        hy={hy}
-                        lex={lex}
-                        ley={ley}
-                        rex={rex}
-                        rey={rey}
-                        fhex={fhex}
-                        fhey={fhey}
-                    />
+                    <Avatar value={value}/>
                 </button>
             </div>
         );

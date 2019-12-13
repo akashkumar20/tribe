@@ -1,7 +1,7 @@
 import React from 'react';
 import '../avatar.scss';
 
-export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
+export default function Avatar(value){
 	return (
 		<svg viewBox="0 0 518.1 921.4"  xmlns="http://www.w3.org/2000/svg" >
 			<g id="bg">
@@ -45,7 +45,7 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 				</g>
 			</g>
 			<g id="feather">
-				<g className="feather1" transform={`matrix(1, 0, 0, 1, ${nx.hx}, ${nx.hy})`}>
+				<g className="feather1" transform={`matrix(1, 0, 0, 1, ${value.value.hx}, ${value.value.hy})`}>
 					<path className="feather2" d="M257.6,226.7c-1.9-6.9,11.5-8.1,13.6-14.9"/>
 					<path className="feather2" d="M256.7,227.4c3.5-5.7,11.9-2,16.2-6.7"/>
 					<path className="feather2" d="M258,226.6c0.3-4.8,8.8-6.6,12.8-7.7"/>
@@ -448,7 +448,7 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 						c-4.2-4.7-15.6-17.8-19.8-23.4"/>
 				</g>
 			</g>
-			<g id="hair" transform={`matrix(1, 0, 0, 1, ${nx.hx}, ${nx.hy})`}>
+			<g id="hair" transform={`matrix(1, 0, 0, 1, ${value.value.hx}, ${value.value.hy})`}>
 				<path className="hair1" d="M183,478.2c-7.1,3.2-14.3,1.4-19.5-5.1c-2.4-3-4.1-6.4-5.3-10c-2.1-6-3.9-12-4-18.4
 					c-0.1-6.5,1.1-12.8,3.4-18.9c0.6-1.7,1.3-3.4,1.9-5.1c0.5-1.3,0.4-2.5-0.3-3.7c-0.5-1-1-2.1-1.6-3.1c-4.6-8.3-5.7-17.1-3.8-26.4
 					c1.4-7.2,4.6-13.5,9.3-19c2.2-2.6,4.5-5.1,6.8-7.5c1.3-1.4,2.8-2.5,4.7-3.2c1.1-0.4,2.1-1,3-1.7c1.6-1.1,3.3-2.2,5-3.2
@@ -544,12 +544,12 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 				</g>
 			</g>
 			<g id="ear">
-				<g id="left-ear" transform={`matrix(1, 0, 0, 1, ${nx.lex}, ${nx.ley})`}>
+				<g id="left-ear" transform={`matrix(1, 0, 0, 1, ${value.value.lex}, ${value.value.ley})`}>
 					<path className="left-ear1" d="M193.7,341.5c0.2,4.7-0.7,9.4-3.1,13.8c-1.7,3.2-4.1,5.9-7.6,7c-4.5,1.4-8.3-0.1-11.6-3.1
 						c-4.6-4.1-7-9.4-8.4-15.3c-1.5-6.2-1.7-12.5,0.1-18.7c1.1-3.9,2.8-7.5,6.2-10.1c3.8-2.9,8.5-3.1,12.6-0.6c3.4,2.1,5.8,5.1,7.6,8.6
 						C192.4,328.8,193.8,334.8,193.7,341.5z"/>
 				</g>
-				<g id="right-ear" transform={`matrix(1, 0, 0, 1, ${nx.rex}, ${nx.rey})`}>
+				<g id="right-ear" transform={`matrix(1, 0, 0, 1, ${value.value.rex}, ${value.value.rey})`}>
 					<path className="right-ear1" d="M359.9,333.3c0.1,7.5-1.7,14.5-6,20.8c-1.2,1.8-2.8,3.4-4.5,4.7c-5.6,4.3-12.5,3.2-16.8-2.6
 						c-2.3-3.2-3.6-6.8-4.2-10.7c-1.3-8.8,0.2-17,4.5-24.8c1.4-2.6,3.3-4.8,5.7-6.6c5.6-4.3,12.7-3.2,16.8,2.6c2.7,3.9,4,8.3,4.4,12.9
 						C360,330.8,359.9,332.1,359.9,333.3z"/>
@@ -562,19 +562,19 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 				<ellipse id="face1" className="face1" cx="262" cy="314.2" rx="83.6" ry="114.3"/>
 			</clipPath>
 			<g id="mark" clipPath="url(#face-clip-path)">
-				<g id="right-mark" transform={`matrix(1, 0, 0, 1, ${-nx.rmx}, ${-nx.rmy})`}>
+				<g id="right-mark" transform={`matrix(1, 0, 0, 1, ${-value.value.rmx}, ${-value.value.rmy})`}>
 					<path className="right-mark1" d="M350.9,401c0,0-51.3-44-63.9-42.8c-12.6,1.2,48.8,68.8,48.8,68.8L350.9,401z"/>
 					<path className="right-mark1" d="M348,438.6c0,0-51.3-44-63.9-42.8s48.8,68.8,48.8,68.8L348,438.6z"/>
 				</g>
-				<g id="left-mark" transform={`matrix(1, 0, 0, 1, ${-nx.lmx}, ${-nx.lmy})`}>
+				<g id="left-mark" transform={`matrix(1, 0, 0, 1, ${-value.value.lmx}, ${-value.value.lmy})`}>
 					<path className="left-mark1" d="M172.8,401c0,0,51.3-44,63.9-42.8c12.6,1.2-48.8,68.8-48.8,68.8L172.8,401z"/>
 					<path className="left-mark1" d="M175.6,438.6c0,0,51.3-44,63.9-42.8c12.6,1.2-48.8,68.8-48.8,68.8L175.6,438.6z"/>
 				</g>
 			</g>
-			<g id="fore-head" clipPath="url(#face-clip-path)" transform={`matrix(1, 0, 0, 1, ${nx.fhex}, ${-nx.fhey})`}>
+			<g id="fore-head" clipPath="url(#face-clip-path)" transform={`matrix(1, 0, 0, 1, ${value.value.fhex}, ${-value.value.fhey})`}>
 				<rect x="96.2" y="584.3" className="fore-head" width="316.8" height="8.1"/>
 			</g>
-			<g id="nose" clipPath="url(#face-clip-path)"  transform={`matrix(1, 0, 0, 1, ${-nx.nx}, ${-nx.ny})`}>
+			<g id="nose" clipPath="url(#face-clip-path)"  transform={`matrix(1, 0, 0, 1, ${-value.value.nx}, ${-value.value.ny})`}>
 				<path className="nose1" d="M248.3,338.9c0.2-1.7,0.7-3.7,1.6-5.7c2.4-5.2,5.4-10.1,8.5-14.8c1.8-2.7,3-5.6,3.9-8.7
 					c0.5-1.8,0.2-3.3-1.1-4.7c-1.1-1.2-2.4-2.2-3.7-3.2c-3.4-2.5-4.7-5.8-4-9.9c0.1-0.7,0-1.5,0.4-2.2c0.5-0.9,1.5-1.5,2.3-1.3
 					c0.9,0.3,1.5,1.3,1.3,2.4c-0.1,0.5-0.2,1.1-0.3,1.6c-0.3,2.7,0.7,4.7,3,6.2c1.2,0.7,2.2,1.5,3.3,2.4c3.4,2.9,4.6,6.4,3.3,10.7
@@ -593,7 +593,7 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 						c-0.4-0.2-0.6-0.5-0.7-0.9c-0.4-1.3,0-2.4,1-2.9C241.8,254.3,242.5,254.6,243.4,256z"/>
 				</g>
 			</g>
-			<g id="front_hair" transform={`matrix(1, 0, 0, 1, ${-nx.fhx}, ${-nx.fhy})`}>
+			<g id="front_hair" transform={`matrix(1, 0, 0, 1, ${-value.value.fhx}, ${-value.value.fhy})`}>
 				<path className="front-hair1" d="M314.3,222.3c-0.1,0.6-0.5,0.7-1,0.8c-1.9,0.6-3.8,1-5.8,1.1c-3.3,0.2-6.6,0.3-9.8-0.2
 					c-6.7-1-12.1,1.1-16.8,5.8c-2.4,2.3-4.7,4.7-7.3,6.9c-3.8,3.1-7.9,5.7-12.3,8c-5.8,3-11.4,2.3-16.8-1c-2.6-1.6-4.8-3.8-7-5.9
 					c-2.9-2.9-6-5.7-9-8.6c-5.5-5.3-11.7-5.7-18.5-3c-0.9,0.4-1.7,1.2-2.8,1c0,0-17.6,6.5-22.9-7.7c-5.4-14.2,56.8-62.1,85.9-56.5
