@@ -21,6 +21,8 @@ class Tribe extends Component {
             ley: '',
             rex: '',
             rey: '',
+            fhex: '',
+            fhey: '',
         }
     }
     updateTribeFace(e){
@@ -33,6 +35,7 @@ class Tribe extends Component {
         const hair = document.querySelector('.hair1');
         const leftEar = document.querySelector('.left-ear1');
         const rightEar = document.querySelector('.right-ear1');
+        const foreHead = document.querySelector('.fore-head');
 
         const mousePercentX = clientX / document.body.clientWidth;
         const mousePercentY = clientY / document.body.clientHeight;
@@ -45,6 +48,13 @@ class Tribe extends Component {
         const yNoseMovement = (noseHeight - faceHeight)/3;
         const nosePosX = (mousePercentX * 2 - 1) * xNoseMovement;
         const nosePosY = (mousePercentY * 2 - 1) * yNoseMovement;
+
+        const foreHeadWidth = foreHead.getBoundingClientRect().width;
+        const foreHeadHeight = foreHead.getBoundingClientRect().height;
+        const xForeHeadMovement = (foreHeadWidth - faceWidth)/3;
+        const yForeHeadMovement = (foreHeadHeight - faceHeight)/3;
+        const foreHeadPosX = (mousePercentX * 2 - 1) * xForeHeadMovement;
+        const foreHeadPosY = (mousePercentY * 2 - 1) * yForeHeadMovement;
 
         const hairWidth = hair.getBoundingClientRect().width;
         const hairHeight = hair.getBoundingClientRect().height;
@@ -104,11 +114,13 @@ class Tribe extends Component {
             ley: leftEarPosY,
             rex: rightEarPosX,
             rey: rightEarPosY,
+            fhex: foreHeadPosX,
+            fhey: foreHeadPosY,
         }))
     }
 
     render(){
-        const { nx, ny, lmx, lmy, rmx, rmy, fhx, fhy, hx, hy, lex, ley, rex, rey } = this.state;
+        const { nx, ny, lmx, lmy, rmx, rmy, fhx, fhy, hx, hy, lex, ley, rex, rey, fhex, fhey } = this.state;
         return(
             <div className="container" onMouseMove={(e) => this.updateTribeFace(e)}>
                 <button>
@@ -127,6 +139,8 @@ class Tribe extends Component {
                         ley={ley}
                         rex={rex}
                         rey={rey}
+                        fhex={fhex}
+                        fhey={fhey}
                     />
                 </button>
             </div>

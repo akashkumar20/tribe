@@ -543,7 +543,7 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 					<path className="left-mark1" d="M160.1,772.5c0,0,60.3-51.8,75.1-50.4S177.8,803,177.8,803L160.1,772.5z"/>
 				</g>
 			</g>
-			<g id="fore-head" clipPath="url(#face-clip-path)" transform={`matrix(1, 0, 0, 1, ${-nx.fhx}, ${-nx.fhy})`}>
+			<g id="fore-head" clipPath="url(#face-clip-path)" transform={`matrix(1, 0, 0, 1, ${nx.fhex}, ${-nx.fhey})`}>
 				<rect x="96.2" y="584.3" className="fore-head" width="316.8" height="8.1"/>
 			</g>
 			<g id="nose" clipPath="url(#face-clip-path)"  transform={`matrix(1, 0, 0, 1, ${-nx.nx}, ${-nx.ny})`}>
