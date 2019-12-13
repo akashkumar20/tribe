@@ -5,14 +5,11 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 	return (
 		<svg viewBox="0 0 518.1 921.4"  xmlns="http://www.w3.org/2000/svg" >
 			<g id="bg">
-				<path id="bg" className="bg" d="M517.8,921.4H0V0.3C0.8,0,1.7-0.1,2.6,0.1h512.5c3.3,0,2.9-0.4,2.9,2.9c0,305.3,0,610.5,0,915.8
-					C518.2,919.7,518.1,920.6,517.8,921.4z"/>
+					<path id="bg" className="bg" d="M518.9,921.4c-172.6,0-345.2,0-517.8,0c0-226.3,0-452.5,0-678.8c0.8-0.3,1.7-0.2,2.6-0.2
+					c170.8,0,341.7,0,512.5,0c3.3,0,2.9-0.3,2.9,2.2c0,225,0,449.9,0,674.9C519.1,920.1,519.3,920.8,518.9,921.4z"/>
 			</g>
 			<g>
-				<circle className="dotsBg" cx="212" cy="112" r="3"/>
-				<circle className="dotsBg" cx="438.9" cy="66.9" r="3"/>
 				<circle className="dotsBg" cx="183.7" cy="365.4" r="3"/>
-				<circle className="dotsBg" cx="64.7" cy="92.3" r="3"/>
 				<circle className="dotsBg" cx="310.7" cy="353.2" r="3"/>
 				<circle className="dotsBg" cx="356.5" cy="288.6" r="3"/>
 				<circle className="dotsBg" cx="422.1" cy="424.1" r="3"/>
@@ -24,9 +21,7 @@ export default function Avatar(nx, ny, lmx, lmy, rmx, rmy){
 				<circle className="dotsBg" cx="471.7" cy="867.7" r="3"/>
 				<circle className="dotsBg" cx="479.5" cy="671" r="3"/>
 				<circle className="dotsBg" cx="458.8" cy="627.8" r="3"/>
-				<circle className="dotsBg" cx="118.7" cy="233.1" r="3"/>
 				<circle className="dotsBg" cx="42.2" cy="375.1" r="3"/>
-				<circle className="dotsBg" cx="389.1" cy="148" r="3"/>
 			</g>
 			<g className="feather1" transform={`matrix(1, 0, 0, 1, ${nx.hx}, ${nx.hy})`}>
 				<path className="feather2" d="M257.4,496.4c-2.1-7.8,13-9.2,15.4-16.9"/>
