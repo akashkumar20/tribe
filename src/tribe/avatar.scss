@@ -7,8 +7,12 @@ button {
     outline: none;
   }
 .hair1, .front-hair1 {fill:#01047A;}
-.bg{fill:#070BAC;}
-.left-mark1, .rigth-mark1, .nose1, .body2, .fore-head {fill:#F3EFEF;}
+.bg1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+.bg2{fill:#3D3F62;}
+.bg3{font-family:'OpenSans-Bold';}
+.bg4{font-size:29.9421px;}
+.bg5{fill-rule:evenodd;clip-rule:evenodd;fill:#070BAC;}
+.left-mark1, .right-mark1, .nose1, .body2, .fore-head {fill:#F3EFEF;}
 .right-ear1{fill:#8A8DF5;}
 .left-ear1{fill:#898CF4;}
 .nose2{opacity:0.26;}
