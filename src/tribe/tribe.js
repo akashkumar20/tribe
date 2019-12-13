@@ -41,7 +41,7 @@ class Tribe extends Component {
         const face = document.querySelector('.face1');
         const nose = document.querySelector('.nose1');
         const leftMark = document.querySelector('.left-mark1');
-        const rightMark = document.querySelector('.rigth-mark1');
+        const rightMark = document.querySelector('.right-mark1');
         const frontHair = document.querySelector('.front-hair1');
         const hair = document.querySelector('.hair1');
         const leftEar = document.querySelector('.left-ear1');
