@@ -25,8 +25,19 @@ class Tribe extends Component {
             fhey: '',
         }
     }
-    updateTribeFace(e){
-        const { clientY, clientX } = e;
+    updateTribeFace(e, type){
+        let x;
+        let y;
+        if( type === 'mouse'){
+            const { clientX, clientY } = e;
+            x = clientX;
+            y = clientY;
+        }
+        if( type === 'touch'){
+            const { changedTouches } = e;
+            x = changedTouches[0].clientX;
+            y = changedTouches[0].clientY;
+        }
         const face = document.querySelector('.face1');
         const nose = document.querySelector('.nose1');
         const leftMark = document.querySelector('.left-mark1');
@@ -37,8 +48,8 @@ class Tribe extends Component {
         const rightEar = document.querySelector('.right-ear1');
         const foreHead = document.querySelector('.fore-head');
 
-        const mousePercentX = clientX / document.body.clientWidth;
-        const mousePercentY = clientY / document.body.clientHeight;
+        const mousePercentX = x / document.body.clientWidth;
+        const mousePercentY = y / document.body.clientHeight;
         const faceWidth = face.getBoundingClientRect().width;
         const faceHeight = face.getBoundingClientRect().height;
 
@@ -122,7 +133,7 @@ class Tribe extends Component {
     render(){
         const { nx, ny, lmx, lmy, rmx, rmy, fhx, fhy, hx, hy, lex, ley, rex, rey, fhex, fhey } = this.state;
         return(
-            <div className="container" onMouseMove={(e) => this.updateTribeFace(e)}>
+            <div className="container" onMouseMove={(e) => this.updateTribeFace(e, 'mouse')} onTouchMove={(e) => this.updateTribeFace(e, 'touch')}>
                 <button>
                     <Avatar 
                         nx={nx}
