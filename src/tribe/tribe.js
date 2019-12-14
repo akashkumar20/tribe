@@ -27,6 +27,15 @@ class Tribe extends Component {
             }
         }
     }
+    
+    componentDidMount(){
+        if(window.ondevicemotion){
+            window.ondevicemotion= function(event){
+                this.updateTribeFace(event, 'motion');
+            }
+        }
+    }
+
     updateTribeFace(e, type){
         let x;
         let y;
@@ -39,6 +48,12 @@ class Tribe extends Component {
             const { changedTouches } = e;
             x = changedTouches[0].clientX;
             y = changedTouches[0].clientY;
+        }
+        if( type === 'motion'){
+            const { acceleration } = e;
+            console.log(acceleration);
+            x = acceleration.x;
+            y = acceleration.y;
         }
         const face = document.querySelector('.face1');
         const nose = document.querySelector('.nose1');
