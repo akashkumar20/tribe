@@ -21,7 +21,7 @@ export default function Avatar(value){
 								v29.9h32.6c1.7-8,8.8-14,17.4-14c8.5,0,15.6,6,17.4,14h48.7c1.7-8,8.8-14,17.4-14s15.6,6,17.4,14h48.7c1.7-8,8.8-14,17.4-14
 								c8.5,0,15.6,6,17.4,14H283c1.7-8,8.8-14,17.4-14c8.5,0,15.6,6,17.4,14h48.7c1.7-8,8.8-14,17.4-14c8.5,0,15.6,6,17.4,14h48.7
 								c1.7-8,8.8-14,17.4-14s15.6,6,17.4,14H517v-30.5C510.6,644.6,506,638.2,506,630.8"/>
-							<text transform="matrix(1 0 0 1 39.5234 623.7938)" className="bg2 bg3 bg4">AK animation</text>
+							<text transform="matrix(1 0 0 1 39.5234 623.7938)" className="bg2 bg3 bg4">Under Construction</text>
 						</g>
 						<rect id="Mask" x="37.4" y="47.9" className="bg5" width="442.3" height="517"/>
 					</g>
