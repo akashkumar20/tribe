@@ -143,9 +143,21 @@ class Tribe extends Component {
                 onMouseMove={(e) => this.updateTribeFace(e, 'mouse')}
                 onTouchMove={(e) => this.updateTribeFace(e, 'touch')}
             >
-                <button>
-                    <Avatar value={value}/>
-                </button>
+                <div className="inner-container">
+                    <button>
+                        <Avatar value={value}/>
+                    </button>
+                    <div className="sub-container">
+                        <span className="new-year">
+                            Happy New Year 2020
+                        </span>
+                    </div>
+                    <div className="sub-container">
+                        <span className="lot-more">
+                            Lot more to come
+                        </span>
+                    </div>
+                </div>
             </div>
         );
     }
