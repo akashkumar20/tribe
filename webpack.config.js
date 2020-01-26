@@ -4,62 +4,82 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(__dirname, 'src/index.js'),
+    entry: path.resolve(__dirname, 'src/App.tsx'),
+    // output: {
+    //     path: path.resolve(__dirname, 'dist'),
+    //     filename: 'app.bundle.js',
+    //     publicPath: '/',
+    // },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.js',
-        publicPath: '/',
+        filename: '[name].js',
+        libraryTarget: 'umd',
+        library: 'tribeman',
+        umdNamedDefine: true,
     },
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader'],
+                use: [
+                    {
+                        loader: 'ts-loader',
+                    },
+                ],
             },
             {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [{
-                    loader: 'style-loader',
-                }, {
-                    loader: 'css-loader',
-                    options: {
-                        sourceMap: true,
-                    },
+                test: /\.html$/i,
+                loader: 'html-loader',
+                options: {
+                  attributes: [':data-src'],
                 },
-                {
-                    loader: 'sass-loader',
-                    options: {
-                        sourceMap: true,
-                        prependData: '@import "variables";\n@import "mixins";\n',
-                        sassOptions: {
-                            includePaths: [
-                                path.join(__dirname, 'src'),
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                require('autoprefixer'),
+                                require('postcss-nested'),
                             ],
-                        }
+                        },
                     },
-                },
-                {
-                    loader: 'postcss-loader',
-                }],
+                    'sass-loader',
+                ],
+            },
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                loader: 'source-map-loader',
             },
         ],
     },
     resolve: {
-        extensions: ['.js'],
-        alias: {
-            '@': path.resolve(__dirname, 'src'),
-        },
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
     plugins: [
         new Dotenv(),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'index.html'),
-        }),
+        // new HtmlWebpackPlugin({
+        //     template: path.resolve(__dirname, 'index.html'),
+        // }),
     ],
     devServer: {
-        historyApiFallback: true,
-        contentBase: [path.resolve('assets'), path.resolve('docs')],
+        contentBase: path.join(__dirname, 'build'),
+        compress: true,
+        disableHostCheck: true,
+        historyApiFallback: {
+            index: 'index.html'
+        },
+        host: '0.0.0.0',
+        hot: false,
+        inline: false,
+        liveReload: false,
+        port: process.env.PORT,
+        public: process.env.PUBLIC_URL,
     },
 };
